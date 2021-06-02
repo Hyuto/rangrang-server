@@ -1,0 +1,59 @@
+item {
+    id: 1
+    name: 'foto'
+}
+
+item {
+    id: 2
+    name: 'bantal'
+}
+
+item {
+    id: 3
+    name: 'tv'
+}
+
+item {
+    id: 4
+    name: 'tanaman'
+}
+
+item {
+    id: 5
+    name: 'sova'
+}
+
+item {
+    id: 6
+    name: 'lampu'
+}
+
+item {
+    id: 7
+    name: 'meja'
+}
+
+item {
+    id: 8
+    name: 'lukisan'
+}
+
+item {
+    id: 9
+    name: 'buku'
+}
+
+item {
+    id: 10
+    name: 'gelas'
+}
+
+item {
+    id: 11
+    name: 'kursi'
+}
+
+item {
+    id: 12
+    name: 'jam dinding'
+}
