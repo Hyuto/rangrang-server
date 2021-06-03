@@ -66,5 +66,5 @@ class ObjectDetection:
 
 class OdConfig(AppConfig):
     name = 'OD'
-    model = ObjectDetection('object_detection_model/pipeline.config', 'object_detection_model/ckpt-3', 
+    model = ObjectDetection('object_detection_model/pipeline.config', 'object_detection_model/ckpt-16', 
                             'object_detection_model/label_map.pbtxt')
