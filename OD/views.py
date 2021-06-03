@@ -6,7 +6,7 @@ from rest_framework.parsers import FileUploadParser
 
 from .apps import OdConfig
 
-import os, json, base64
+import os
 from random import sample
 from string import digits, ascii_uppercase, ascii_lowercase
 from datetime import datetime
@@ -16,7 +16,8 @@ def rand_name():
     return ''.join(sample(chars, 8))
 
 class ObjectDetectionVideo(APIView):
-    parser_classes = (FileUploadParser,)
+    permission_classes = []
+    parser_classes = (FileUploadParser, )
 
     def get_file_name(self, path):
         while True:
@@ -24,22 +25,11 @@ class ObjectDetectionVideo(APIView):
             if not os.path.exists(os.path.join(path, name)):
                 return os.path.join(path, name)
 
-    def post(self, request):
-        if request.method == 'POST':
-            data = json.loads(request.body)
-            name = self.get_file_name('files')
-            with open(name, 'wb+') as video:
-                video.write(bytes(base64.b64decode(data['video'])))
-            res = OdConfig.model.detect_vid(name)
-            os.remove(name)
-            return JsonResponse({'object' : res})
-    
-    def put(self, request, filename, format='mp4'):
-        up_file = request.FILES['file']
+    def post(self, request, format='mp4'):
         name = self.get_file_name('files')
-        destination = open(name, 'wb+')
-        for chunk in up_file.chunks():
-            destination.write(chunk)
-        destination.close()
+        with open(name, 'wb+') as w:
+            for part in request.FILES['file'].chunks():
+                w.write(part)
         res = OdConfig.model.detect_vid(name)
+        os.remove(name)
         return JsonResponse({'object' : res})
