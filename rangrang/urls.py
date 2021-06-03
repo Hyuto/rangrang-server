@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from OD.views import ObjectDetectionVideo
+from OD.views import ObjectDetectionVideo, ObjectDetectionPic
 
 urlpatterns = [
-    path('od-api/video/', ObjectDetectionVideo.as_view())
+    path('od-api/video/', ObjectDetectionVideo.as_view()),
+    path('od-api/picture/', ObjectDetectionPic.as_view()),
 ]

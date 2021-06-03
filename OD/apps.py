@@ -60,9 +60,14 @@ class ObjectDetection:
         return [self.category_index[x]['name'] for x in CLASSES]
     
     def detect_pic(self, pic_path):
-        image = np.asarray(Image.open('pic_path').convert('RGB'))
+        image = np.asarray(Image.open(pic_path).convert('RGB'))
         input_tensor = tf.convert_to_tensor(np.expand_dims(image, 0), dtype=tf.float32)
         detections, predictions_dict, shapes = self.detect_fn(input_tensor)
+        
+        treshold = 0.6
+        scores = detections['detection_scores'].numpy()
+        classes = set(detections['detection_classes'].numpy()[scores > treshold])
+        return [self.category_index[x]['name'] for x in classes]
 
 class OdConfig(AppConfig):
     name = 'OD'
