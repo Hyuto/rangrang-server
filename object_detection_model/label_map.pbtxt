@@ -1,11 +1,11 @@
 item {
     id: 1
-    name: 'foto'
+    name: 'photo'
 }
 
 item {
     id: 2
-    name: 'bantal'
+    name: 'pillow'
 }
 
 item {
@@ -15,45 +15,45 @@ item {
 
 item {
     id: 4
-    name: 'tanaman'
+    name: 'plant'
 }
 
 item {
     id: 5
-    name: 'sova'
+    name: 'sofa'
 }
 
 item {
     id: 6
-    name: 'lampu'
+    name: 'lamp'
 }
 
 item {
     id: 7
-    name: 'meja'
+    name: 'table'
 }
 
 item {
     id: 8
-    name: 'lukisan'
+    name: 'painting'
 }
 
 item {
     id: 9
-    name: 'buku'
+    name: 'book'
 }
 
 item {
     id: 10
-    name: 'gelas'
+    name: 'glass'
 }
 
 item {
     id: 11
-    name: 'kursi'
+    name: 'chair'
 }
 
 item {
     id: 12
-    name: 'jam dinding'
+    name: 'clock'
 }
