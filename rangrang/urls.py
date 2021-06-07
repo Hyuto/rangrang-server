@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.urls import path
 from OD.views import ObjectDetectionVideo, ObjectDetectionPic
+from CD.views import ColorDetectionVideo, ColorDetectionPic
 
 urlpatterns = [
+    # OD
     path('od-api/video/', ObjectDetectionVideo.as_view()),
     path('od-api/picture/', ObjectDetectionPic.as_view()),
+    # CD
+    path('cd-api/video/', ColorDetectionVideo.as_view()),
+    path('cd-api/picture/', ColorDetectionPic.as_view()),
 ]

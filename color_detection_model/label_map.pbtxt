@@ -1,0 +1,49 @@
+item {
+    id: 1
+    name: 'red'
+}
+
+item {
+    id: 2
+    name: 'blue'
+}
+
+item {
+    id: 3
+    name: 'green'
+}
+
+item {
+    id: 4
+    name: 'white'
+}
+
+item {
+    id: 5
+    name: 'yellow'
+}
+
+item {
+    id: 6
+    name: 'orange'
+}
+
+item {
+    id: 7
+    name: 'pink'
+}
+
+item {
+    id: 8
+    name: 'black'
+}
+
+item {
+    id: 9
+    name: 'brown'
+}
+
+item {
+    id: 10
+    name: 'purple'
+}
