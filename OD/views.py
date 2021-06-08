@@ -44,11 +44,11 @@ class ObjectDetectionPic(APIView):
     def get_file_name(self, path):
         """ Get file name for uploaded image """
         while True:
-            name = f"{datetime.now().strftime('%m-%d-%Y')}_{rand_name()}.png"
+            name = f"{datetime.now().strftime('%m-%d-%Y')}_{rand_name()}.jpg"
             if not os.path.exists(os.path.join(path, name)):
                 return os.path.join(path, name)
 
-    def post(self, request, format='png'):
+    def post(self, request, format='jpg'):
         """ Receive post image file and run detection """
         name = self.get_file_name('files')
         with open(name, 'wb+') as w:

@@ -1,4 +1,4 @@
-# RangRang - Machine Learning
+# RangRang - Server
 
 <p align="center">
   <img src="assets/logo.png" alt="logo" width="300px" height="300px" />
@@ -10,3 +10,5 @@
 [![TensorFlow 2.3](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.5.0)
 
 Server side of RangRang that use `Django` & `djangorestframework`
+
+[![web](https://img.shields.io/badge/website-online-green?style=plastic)](http://35.222.141.247/)
