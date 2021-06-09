@@ -7,7 +7,7 @@
 [![python](https://img.shields.io/badge/Made%20with-Python-1f425f?style=plastic&logo=Python)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-3.2-green?style=plastic&logo=django)](https://docs.djangoproject.com/en/3.2/)
 [![djangorestframework](https://img.shields.io/badge/djangorestframework-3.12-blue?style=plastic)](https://www.django-rest-framework.org/)
-[![TensorFlow 2.3](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.5.0)
+[![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.5.0) [![Protobuf Compiler >= 3.0](https://img.shields.io/badge/ProtoBuf%20Compiler-%3E3.0-brightgreen)](https://grpc.io/docs/protoc-installation/#install-using-a-package-manager)
 
 [![web](https://img.shields.io/badge/website%20status-online-green?style=plastic)](http://35.222.141.247/)
 
@@ -34,51 +34,51 @@
          git clone https://github.com/tensorflow/models.git
          ```
       * Install tensorflow object detection API
-         ```
+         ```bash
          cd models/research
          protoc object_detection/protos/*.proto --python_out=.
          cp object_detection/packages/tf2/setup.py .
          sudo pip3 install --use-feature=2020-resolver .
          ```
 7. Clone *This* Repository by Running the Following Command
-      ```
+      ```bash
       git clone https://github.com/Hyuto/rangrang-server.git
       cd rangrang-server
       ```
 8. Install `Django`, `djangorestframework` and `whitenoise`
-      ```
+      ```bash
       sudo pip3 install django djangorestframework whitenoise
       ```
 9. Setup `django` application
       * Setup main directory
-         ```
+         ```bash
          mkdir static files
          ```
       * Migrate db
-         ```
+         ```bash
          python3 manage.py migrate
          ```
       * Collectstatic
-         ```
+         ```bash
          python3 manage.py collectstatic
          ```
 10. Exit the SSH Session by Running:
-``bash
-    exit
-```
+      ```bash
+      exit
+      ```
 11. Turn off the VM Instance for the Back End Server by
-  - Clicking on the Checkbox of the VM that is Going to be Turned Off
-  - On the Top Panel, Click Stop
+   * Clicking on the Checkbox of the VM that is Going to be Turned Off
+   * On the Top Panel, Click Stop
 12. Click on the Back End Server VM then Click on the Edit Button.
-13. Navigate to the Custom metadata Section, and add the Following:
-  Key: startup-script
-  Value: 
-  ```
+13. Navigate to the Custom metadata Section, and add the Following:<br>
+   Key: `startup-script`<br>
+   Value: 
+      ```bash
       #! /bin/bash
       sudo service apache2 stop
       cd /home/rangrang-server
       sudo nohup python3 manage.py runserver 0.0.0.0:80 >> log.log 2>&1 | tee &
-  ```
+      ```
 14. Save the Changes
 15. Turn on the VM Instance to Start the Back End Server Service
 16. Navigate to the External IP Address to Check Its Availability by Going to these Paths:
@@ -90,3 +90,11 @@
      ```
      
 Once all the Paths are Working, the Server is Considered Fully Functioning and Ready to Use
+
+## Navigation 
+
+|  | Repository |
+| :--- | :--------: |
+| Android | [grrrracia/RangRang-MobileApp](https://github.com/grrrracia/RangRang-MobileApp) |
+| Cloud Computing | [Hyuto/rangrang-server](https://github.com/Hyuto/rangrang-server) |
+| Machine Learning | [Hyuto/rangrang-ML](https://github.com/Hyuto/rangrang-ML) |
