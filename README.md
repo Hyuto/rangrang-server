@@ -15,12 +15,12 @@
 
 1. Open the Google Cloud Platform
 2. To grant an IAM role as Editor VM on a project, do the following:
-   a. In the Cloud Console, go to the IAM page
-   b. Go to the IAM page
-   c. Click Add
-   d. Enter an email e.g example@gmail.com,
-   e. Choose the Roles under the Compute Engine Role and Select 'Compute Engine Admin'
-   f. Click Save
+      * In the Cloud Console, go to the IAM page
+      * Go to the IAM page
+      * Click Add
+      * Enter an email e.g example@gmail.com,
+      * Choose the Roles under the Compute Engine Role and Select 'Compute Engine Admin'
+      * Click Save
 3. Go into the Cloud Console
 4. To Provision a New Compute Instance for the Back-End Server, Run the Following Commands
    ```
@@ -30,12 +30,12 @@
 
    gcloud compute --project=<YOUR PROJECT ID> firewall-rules create default-allow-https --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:443 --source-ranges=0.0.0.0/0 --target-tags=https-server
    ```
- 4. SSH into the Server either by GUI, or through the Command Line Interface
- 5. Update Packages on the Ubuntu VM by Running the Following Commands
+ 1. SSH into the Server either by GUI, or through the Command Line Interface
+ 2. Update Packages on the Ubuntu VM by Running the Following Commands
       ```bash
       sudo apt update && sudo apt upgrade -y
       ```
- 6. Setup Machine Learning Dependencies with the Following Commands
+ 3. Setup Machine Learning Dependencies with the Following Commands
       * Clone models repository from tensorflow
          ```bash
          git clone https://github.com/tensorflow/models.git
@@ -47,16 +47,16 @@
          cp object_detection/packages/tf2/setup.py .
          sudo pip3 install --use-feature=2020-resolver .
          ```
-7. Clone *This* Repository by Running the Following Command
+5. Clone *This* Repository by Running the Following Command
       ```bash
       git clone https://github.com/Hyuto/rangrang-server.git
       cd rangrang-server
       ```
-8. Install `Django`, `djangorestframework` and `whitenoise`
+6. Install `Django`, `djangorestframework` and `whitenoise`
       ```bash
       sudo pip3 install django djangorestframework whitenoise
       ```
-9. Setup `django` application
+7. Setup `django` application
       * Setup main directory
          ```bash
          mkdir static files
@@ -69,11 +69,11 @@
          ```bash
          python3 manage.py collectstatic
          ```
-10. Exit the SSH Session by Running:
+8.  Exit the SSH Session by Running:
       ```bash
       exit
       ```
-11. Turn off the VM Instance for the Back End Server by
+9.  Turn off the VM Instance for the Back End Server by
    * Clicking on the Checkbox of the VM that is Going to be Turned Off
    * On the Top Panel, Click Stop
 12. Click on the Back End Server VM then Click on the Edit Button.
