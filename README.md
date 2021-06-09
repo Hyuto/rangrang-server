@@ -18,7 +18,7 @@
    a. In the Cloud Console, go to the IAM page
    b. Go to the IAM page
    c. Click Add
-   d. Enter an email e.g example@gmail.com, 
+   d. Enter an email e.g example@gmail.com,
    e. Choose the Roles under the Compute Engine Role and Select 'Compute Engine Admin'
    f. Click Save
 3. Go into the Cloud Console
