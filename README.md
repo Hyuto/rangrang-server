@@ -11,4 +11,27 @@
 
 Server side of RangRang that use `Django` & `djangorestframework`
 
+Steps to Replicate the Server Deployment:
+1. Open the Google Cloud Platform
+2. Go into the Cloud Console
+3. To Provision a New Compute Instance for the Back-End Server, Run the Following Commands
+```
+    gcloud beta compute --project=still-bank-315212 instances create rangrang-backend --zone=asia-southeast2-b --machine-type=n1-standard-2 --subnet=default --address=34.101.140.95 --network-tier=PREMIUM --maintenance-policy=TERMINATE --service-account=1083353886178-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --tags=http-server,https-server --image=ubuntu-2004-focal-v20210603 --image-project=ubuntu-os-cloud --boot-disk-size=10GB --boot-disk-type=pd-ssd --boot-disk-device-name=rangrang-backend --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+
+    gcloud compute --project=still-bank-315212 firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
+
+    gcloud compute --project=still-bank-315212 firewall-rules create default-allow-https --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:443 --source-ranges=0.0.0.0/0 --target-tags=https-server
+  ```
+ 4. SSH into the Server either by GUI, or through the Command Line Interface
+ 5. Update Packages on the Ubuntu VM by Running the Following Commands
+ ```BASH
+    sudo apt update
+    sudo apt upgrade
+ ```
+ 6. Setup Machine Learning Dependencies with the Following Commands
+ ```BASH
+    clone models repository from tensorflow
+    git clone https://github.com/tensorflow/models.git
+ ```
+    
 [![web](https://img.shields.io/badge/website-online-green?style=plastic)](http://35.222.141.247/)
