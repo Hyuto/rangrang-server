@@ -14,8 +14,15 @@
 ## Steps to Replicate the Server Deployment
 
 1. Open the Google Cloud Platform
-2. Go into the Cloud Console
-3. To Provision a New Compute Instance for the Back-End Server, Run the Following Commands
+2. To grant an IAM role as Editor VM on a project, do the following:
+   a. In the Cloud Console, go to the IAM page
+   b. Go to the IAM page
+   c. Click Add
+   d. Enter an email e.g example@gmail.com, 
+   e. Choose the Roles under the Compute Engine Role and Select 'Compute Engine Admin'
+   f. Click Save
+3. Go into the Cloud Console
+4. To Provision a New Compute Instance for the Back-End Server, Run the Following Commands
    ```
    gcloud beta compute --project=<YOUR PROJECT ID> instances create rangrang-backend --zone=asia-southeast2-b --machine-type=n1-standard-2 --subnet=default --address=34.101.140.95 --network-tier=PREMIUM --maintenance-policy=TERMINATE --service-account=1083353886178-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --tags=http-server,https-server --image=ubuntu-2004-focal-v20210603 --image-project=ubuntu-os-cloud --boot-disk-size=10GB --boot-disk-type=pd-ssd --boot-disk-device-name=rangrang-backend --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
 
