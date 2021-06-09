@@ -62,4 +62,31 @@
          ```
          python3 manage.py collectstatic
          ```
-10. 
+10. Exit the SSH Session by Running:
+``bash
+    exit
+```
+11. Turn off the VM Instance for the Back End Server by
+  - Clicking on the Checkbox of the VM that is Going to be Turned Off
+  - On the Top Panel, Click Stop
+12. Click on the Back End Server VM then Click on the Edit Button.
+13. Navigate to the Custom metadata Section, and add the Following:
+  Key: startup-script
+  Value: 
+  ```
+      #! /bin/bash
+      sudo service apache2 stop
+      cd /home/rangrang-server
+      sudo nohup python3 manage.py runserver 0.0.0.0:80 >> log.log 2>&1 | tee &
+  ```
+14. Save the Changes
+15. Turn on the VM Instance to Start the Back End Server Service
+16. Navigate to the External IP Address to Check Its Availability by Going to these Paths:
+      ```
+      http://<EXTERNAL-IP-ADDRESS>/cd-api/video/
+      http://<EXTERNAL-IP-ADDRESS>/cd-api/picture/
+      http://<EXTERNAL-IP-ADDRESS>/od-api/video/
+      http://<EXTERNAL-IP-ADDRESS>/od-api/picture/
+     ```
+     
+Once all the Paths are Working, the Server is Considered Fully Functioning and Ready to Use
